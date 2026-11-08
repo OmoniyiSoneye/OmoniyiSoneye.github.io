@@ -279,3 +279,73 @@ footer {
   html { scroll-behavior: auto; }
   .panel, .panel:hover { transition: none; transform: none; }
 }
+
+/* ---- Project cards (Bolaji-style: cover, info row, body, links) ---- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 380px), 1fr));
+  gap: 1.5rem;
+}
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+}
+.card:hover {
+  border-color: rgba(111, 211, 255, 0.6);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.35), 0 0 28px rgba(111, 211, 255, 0.15);
+  transform: translateY(-4px);
+}
+.card-cover {
+  aspect-ratio: 16 / 9;
+  background: #0e1533;
+  border-bottom: 1px solid var(--panel-border);
+  overflow: hidden;
+}
+.card-cover svg, .card-cover img, .card-cover video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
+  padding: 0.6rem 1.3rem;
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  color: var(--text-dim);
+  border-bottom: 1px solid rgba(120, 200, 255, 0.12);
+  background: rgba(7, 11, 26, 0.35);
+}
+.card-meta span:first-child { color: var(--accent-warm); }
+.card-body { padding: 1.1rem 1.3rem 1.3rem; display: flex; flex-direction: column; flex: 1; }
+.card-body > p { color: var(--text-dim); margin-bottom: 0.6rem; }
+.card-body ul { padding-left: 1.1rem; color: var(--text-dim); font-size: 0.95rem; }
+.card-body li { margin: 0.25rem 0; }
+.card-body li::marker { color: var(--accent); }
+.stack {
+  margin-top: auto;
+  padding-top: 0.9rem;
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  color: var(--accent) !important;
+}
+.card .project-links { margin-top: 0.8rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  .card, .card:hover { transition: none; transform: none; }
+}
