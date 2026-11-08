@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Omoniyi Soneye | Player Profile</title>
-  <meta name="description" content="Omoniyi Soneye, Computer Engineering student at Sac State. ML, computer vision, VR, and game dev.">
+  <title>Omoniyi Soneye</title>
+  <meta name="description" content="Omoniyi Soneye, Computer Engineering student at Sacramento State. Computer vision, VR, and game development.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
@@ -12,28 +12,29 @@
 </head>
 <body>
 
-  <!-- ===== FLOOR MENU (nav) =====
-       Each link jumps to a section by its id. -->
+  <!-- ===== FLOOR MENU (nav): each link jumps to a section id ===== -->
   <nav id="floor-menu">
-    <a href="#floor-0" class="brand">O. SONEYE</a>
+    <a href="#top" class="brand">O. SONEYE</a>
     <ul>
-      <li><a href="#floor-1">F1 Profile</a></li>
+      <li><a href="#floor-1">F1 About</a></li>
       <li><a href="#floor-2">F2 Skills</a></li>
       <li><a href="#floor-3">F3 Experience</a></li>
       <li><a href="#floor-4">F4 Projects</a></li>
       <li><a href="#floor-5">F5 Game Dev</a></li>
       <li><a href="#floor-6">F6 Research</a></li>
-      <li><a href="#floor-7">Contact</a></li>
+      <li><a href="#floor-7">F7 Community</a></li>
+      <li><a href="#floor-8">F8 Hobbies</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
   <main>
 
-    <!-- ===== FLOOR 0: INTRO (hero) ===== -->
-    <header id="floor-0" class="floor">
+    <!-- ===== INTRO (hero) ===== -->
+    <header id="top" class="floor hero">
       <div class="hero-text">
         <h1>Omoniyi Soneye</h1>
-        <p class="tagline">Computer Engineering @ Sac State · ML / Computer Vision · VR · Game Dev</p>
+        <p class="tagline">Computer Engineering @ Sacramento State · Computer Vision · VR · Game Dev</p>
         <p class="location">Sacramento, CA</p>
         <div class="links">
           <a href="mailto:soneyeniyi@gmail.com">Email</a>
@@ -41,7 +42,7 @@
           <a href="https://github.com/OmoniyiSoneye" target="_blank" rel="noopener">GitHub</a>
         </div>
         <a href="#floor-1" class="start-btn">Enter ↓</a>
-    </div>
+      </div>
       <div class="hero-art" aria-hidden="true">
       <svg viewBox="0 0 400 440" xmlns="http://www.w3.org/2000/svg">
         <defs>
@@ -85,55 +86,110 @@
     </div>
     </header>
 
-    <!-- ===== FLOOR 1: PROFILE / EDUCATION ===== -->
+    <!-- ===== FLOOR 1: ABOUT ===== -->
     <section id="floor-1" class="floor">
       <p class="floor-label">FLOOR 1</p>
-      <h2>Profile</h2>
-      <div class="panel">
-        <h3>California State University, Sacramento</h3>
-        <p>B.S. Computer Engineering · Expected June 2028</p>
-        <p><strong>Coursework:</strong> Operating Systems, Data Structures &amp; Algorithms, Computer Architecture, Logic Design</p>
+      <h2>About Me</h2>
+      <div class="about">
+        <div class="panel about-text">
+          <p class="lead">Hi, my name is Omoniyi Soneye, and I'm currently studying Computer Engineering at Sacramento State University.</p>
+          <p>I'm Nigerian, and I love my family, my community, and my country. Outside of class you'll usually find me playing or watching sports (basketball, soccer, and football), going out with friends, or playing video games.</p>
+          <p>On the technical side, I like building things that see, move, and react: computer vision models, VR experiences, and games.</p>
+        </div>
+        <div class="panel about-facts">
+          <h3>Sacramento State</h3>
+          <p>B.S. Computer Engineering<br>Expected June 2028</p>
+          <p class="facts-label">Coursework</p>
+          <p>Operating Systems, Data Structures &amp; Algorithms, Computer Architecture, Logic Design</p>
+          <p class="facts-label">Looking for</p>
+          <p>Summer 2027 internships in software, ML / computer vision, and embedded systems</p>
+        </div>
       </div>
     </section>
 
     <!-- ===== FLOOR 2: SKILLS =====
-         data-skill on each button matches data-skills on project cards.
-         In Step 3 we'll make clicking a skill filter the projects. -->
+         Clicking a skill with "See projects" filters the project cards
+         below and shows how that skill was used (see index.js). -->
     <section id="floor-2" class="floor">
       <p class="floor-label">FLOOR 2</p>
       <h2>Skills</h2>
-      <p class="hint">Equipped skills. (Soon: click one to see which projects used it.)</p>
-      <div class="skill-group">
-        <h3>Languages</h3>
-        <div class="skills">
-          <button data-skill="python">Python</button>
-          <button data-skill="java">Java</button>
-          <button data-skill="javascript">JavaScript</button>
-          <button data-skill="html-css">HTML/CSS</button>
-          <button data-skill="lua">Lua</button>
-          <button data-skill="c">C/C++</button>
-        </div>
+      <p class="hint">Select a skill to see how I've used it in my projects.</p>
+      <h3 class="group-title">Languages</h3>
+      <div class="skill-grid">
+          <button class="skill-tile" type="button" data-skill="python">
+            <img class="icon" src="img/icons/python.svg" alt="" width="28" height="28">
+            <span class="tile-text"><span class="tile-name">Python</span><span class="tile-line">APIs at ldrboard, ML pipelines for LeBuckets, depth models for MosaicXR</span><span class="tile-go">See projects →</span></span>
+          </button>
+          <button class="skill-tile" type="button" data-skill="javascript">
+            <img class="icon" src="img/icons/javascript.svg" alt="" width="28" height="28">
+            <span class="tile-text"><span class="tile-name">JavaScript</span><span class="tile-line">ldrboard frontend, MosaicXR web app, this site</span><span class="tile-go">See projects →</span></span>
+          </button>
+          <button class="skill-tile" type="button" data-skill="html-css">
+            <img class="icon" src="img/icons/html5.svg" alt="" width="28" height="28">
+            <span class="tile-text"><span class="tile-name">HTML / CSS</span><span class="tile-line">Responsive frontends, including this site</span><span class="tile-go">See projects →</span></span>
+          </button>
+          <button class="skill-tile" type="button" data-skill="lua">
+            <img class="icon" src="img/icons/lua.svg" alt="" width="28" height="28">
+            <span class="tile-text"><span class="tile-name">Lua</span><span class="tile-line">Gameplay scripting on Roblox</span><span class="tile-go">See projects →</span></span>
+          </button>
+          <div class="skill-tile no-link">
+            <img class="icon" src="img/icons/java.svg" alt="" width="28" height="28">
+            <span class="tile-text"><span class="tile-name">Java</span><span class="tile-line">Coursework</span></span>
+          </div>
+          <div class="skill-tile no-link">
+            <img class="icon" src="img/icons/cplusplus.svg" alt="" width="28" height="28">
+            <span class="tile-text"><span class="tile-name">C / C++</span><span class="tile-line">Coursework</span></span>
+          </div>
       </div>
-      <div class="skill-group">
-        <h3>ML / AI</h3>
-        <div class="skills">
-          <button data-skill="pytorch">PyTorch</button>
-          <button data-skill="yolo">YOLO</button>
-          <button data-skill="opencv">OpenCV</button>
-          <button data-skill="cv">Computer Vision</button>
-          <button data-skill="pose">Pose Estimation</button>
-        </div>
+      <h3 class="group-title">ML / AI</h3>
+      <div class="skill-grid">
+          <button class="skill-tile" type="button" data-skill="pytorch">
+            <img class="icon" src="img/icons/pytorch.svg" alt="" width="28" height="28">
+            <span class="tile-text"><span class="tile-name">PyTorch</span><span class="tile-line">Training and quantizing detection models, MiDaS depth</span><span class="tile-go">See projects →</span></span>
+          </button>
+          <button class="skill-tile" type="button" data-skill="yolo">
+            <span class="icon icon-text">Y</span>
+            <span class="tile-text"><span class="tile-name">YOLO</span><span class="tile-line">Real-time detection at 30 FPS on CPU</span><span class="tile-go">See projects →</span></span>
+          </button>
+          <button class="skill-tile" type="button" data-skill="opencv">
+            <img class="icon" src="img/icons/opencv.svg" alt="" width="28" height="28">
+            <span class="tile-text"><span class="tile-name">OpenCV</span><span class="tile-line">Video processing and court boundary detection</span><span class="tile-go">See projects →</span></span>
+          </button>
+          <button class="skill-tile" type="button" data-skill="cv">
+            <span class="icon icon-text">CV</span>
+            <span class="tile-text"><span class="tile-name">Computer Vision</span><span class="tile-line">Detection, pose, depth, and camera control</span><span class="tile-go">See projects →</span></span>
+          </button>
+          <button class="skill-tile" type="button" data-skill="pose">
+            <span class="icon icon-text">PE</span>
+            <span class="tile-text"><span class="tile-name">Pose Estimation</span><span class="tile-line">RTMPose shooting form analysis</span><span class="tile-go">See projects →</span></span>
+          </button>
       </div>
-      <div class="skill-group">
-        <h3>Tools</h3>
-        <div class="skills">
-          <button data-skill="git">Git</button>
-          <button data-skill="docker">Docker</button>
-          <button data-skill="postgres">PostgreSQL</button>
-          <button data-skill="unity">Unity</button>
-          <button data-skill="blender">Blender</button>
-          <button data-skill="roboflow">Roboflow</button>
-        </div>
+      <h3 class="group-title">Tools & 3D</h3>
+      <div class="skill-grid">
+          <button class="skill-tile" type="button" data-skill="blender">
+            <img class="icon" src="img/icons/blender.svg" alt="" width="28" height="28">
+            <span class="tile-text"><span class="tile-name">Blender</span><span class="tile-line">Roblox character animations and research scenes</span><span class="tile-go">See projects →</span></span>
+          </button>
+          <button class="skill-tile" type="button" data-skill="unity">
+            <img class="icon" src="img/icons/unity.svg" alt="" width="28" height="28">
+            <span class="tile-text"><span class="tile-name">Unity</span><span class="tile-line">VR gallery for Meta Quest 3</span><span class="tile-go">See projects →</span></span>
+          </button>
+          <button class="skill-tile" type="button" data-skill="git">
+            <img class="icon" src="img/icons/git.svg" alt="" width="28" height="28">
+            <span class="tile-text"><span class="tile-name">Git</span><span class="tile-line">Version control on everything</span><span class="tile-go">See projects →</span></span>
+          </button>
+          <div class="skill-tile no-link">
+            <img class="icon" src="img/icons/postgresql.svg" alt="" width="28" height="28">
+            <span class="tile-text"><span class="tile-name">PostgreSQL</span><span class="tile-line">Query optimization at ldrboard</span></span>
+          </div>
+          <div class="skill-tile no-link">
+            <img class="icon" src="img/icons/docker.svg" alt="" width="28" height="28">
+            <span class="tile-text"><span class="tile-name">Docker</span><span class="tile-line">Containerized dev environments</span></span>
+          </div>
+          <button class="skill-tile" type="button" data-skill="roboflow">
+            <span class="icon icon-text">R</span>
+            <span class="tile-text"><span class="tile-name">Roboflow</span><span class="tile-line">Training data for LeBuckets</span><span class="tile-go">See projects →</span></span>
+          </button>
       </div>
     </section>
 
@@ -152,7 +208,7 @@
         </ul>
       </article>
 
-      <article class="panel" data-skills="blender">
+      <article class="panel">
         <h3>3D Animator · Roblox</h3>
         <p class="meta">Jun 2024 – Present</p>
         <ul>
@@ -163,36 +219,40 @@
       </article>
 
       <article class="panel">
-        <h3>Region VI Treasurer · National Society of Black Engineers</h3>
-        <p class="meta">May 2026 – Present</p>
-        <ul>
-          <li>Manage $100K+ in regional funds supporting chapters and conferences</li>
-          <li>Helped generate $77K in corporate sponsorship and $80K+ in conference registration revenue</li>
-          <li>Run finances for zone summits across 6 zones</li>
-          <li>Coordinated Chapter Relief for 10 chapters: 15 hotel rooms and a $10K travel budget for FRC</li>
-        </ul>
-      </article>
-
-      <article class="panel">
         <h3>Teaching Assistant, Intro to CS · UC Berkeley SMASH</h3>
         <p class="meta">Apr 2026 – Jul 2026</p>
         <ul>
           <li>Helped students with programming fundamentals and problem solving through 1:1 support</li>
+          <li>Reinforced technical topics with hands-on guidance during workshop sessions</li>
           <li>Encouraged underrepresented students to pursue STEM by sharing my own path</li>
         </ul>
       </article>
     </section>
 
     <!-- ===== FLOOR 4: PROJECTS =====
-         Each card: cover image, info row, description, links.
-         To swap a placeholder cover for a real picture, replace the
-         <svg>...</svg> inside .card-cover with:
-         <img src="img/your-picture.png" alt="what it shows"> -->
+         To swap a cover graphic for a real picture, replace the <svg>...</svg>
+         inside .card-cover with: <img src="img/your-picture.png" alt="what it shows"> -->
     <section id="floor-4" class="floor">
       <p class="floor-label">FLOOR 4</p>
       <h2>Projects</h2>
+      <div class="filter-bar" role="group" aria-label="Filter projects by skill">
+        <button type="button" class="filter-btn active" data-skill="all"><span>All</span></button>
+        <button type="button" class="filter-btn" data-skill="blender" title="Blender"><img class="chip-icon" src="img/icons/blender.svg" alt="" width="28" height="28"><span>Blender</span></button>
+        <button type="button" class="filter-btn" data-skill="cv" title="Computer Vision"><span class="chip-icon icon-text">CV</span><span>Computer Vision</span></button>
+        <button type="button" class="filter-btn" data-skill="git" title="Git"><img class="chip-icon" src="img/icons/git.svg" alt="" width="28" height="28"><span>Git</span></button>
+        <button type="button" class="filter-btn" data-skill="html-css" title="HTML / CSS"><img class="chip-icon" src="img/icons/html5.svg" alt="" width="28" height="28"><span>HTML / CSS</span></button>
+        <button type="button" class="filter-btn" data-skill="javascript" title="JavaScript"><img class="chip-icon" src="img/icons/javascript.svg" alt="" width="28" height="28"><span>JavaScript</span></button>
+        <button type="button" class="filter-btn" data-skill="lua" title="Lua"><img class="chip-icon" src="img/icons/lua.svg" alt="" width="28" height="28"><span>Lua</span></button>
+        <button type="button" class="filter-btn" data-skill="opencv" title="OpenCV"><img class="chip-icon" src="img/icons/opencv.svg" alt="" width="28" height="28"><span>OpenCV</span></button>
+        <button type="button" class="filter-btn" data-skill="pose" title="Pose Estimation"><span class="chip-icon icon-text">PE</span><span>Pose Estimation</span></button>
+        <button type="button" class="filter-btn" data-skill="python" title="Python"><img class="chip-icon" src="img/icons/python.svg" alt="" width="28" height="28"><span>Python</span></button>
+        <button type="button" class="filter-btn" data-skill="pytorch" title="PyTorch"><img class="chip-icon" src="img/icons/pytorch.svg" alt="" width="28" height="28"><span>PyTorch</span></button>
+        <button type="button" class="filter-btn" data-skill="roboflow" title="Roboflow"><span class="chip-icon icon-text">R</span><span>Roboflow</span></button>
+        <button type="button" class="filter-btn" data-skill="unity" title="Unity"><img class="chip-icon" src="img/icons/unity.svg" alt="" width="28" height="28"><span>Unity</span></button>
+        <button type="button" class="filter-btn" data-skill="yolo" title="YOLO"><span class="chip-icon icon-text">Y</span><span>YOLO</span></button>
+      </div>
+      <p class="filter-status" aria-live="polite"></p>
       <div class="card-grid">
-
         <article class="card" data-skills="python pytorch yolo opencv cv pose roboflow">
           <div class="card-cover">
             <svg viewBox="0 0 320 180" aria-hidden="true">
@@ -216,10 +276,7 @@
               </g>
             </svg>
           </div>
-          <div class="card-meta">
-            <span>⏱ Jan 2026 – Present</span>
-            <span>Ongoing</span>
-          </div>
+          <div class="card-meta"><span>⏱ Jan 2026 – Present</span><span>Ongoing</span></div>
           <div class="card-body">
             <h3>LeBuckets</h3>
             <p>AI basketball training app that watches you play through a camera and breaks down your game in real time.</p>
@@ -230,11 +287,17 @@
               <li>40% lower inference latency through quantization</li>
               <li>Court boundary detection and violation tracking</li>
             </ul>
-            <p class="stack">Python · PyTorch · YOLO11 · OpenCV · RTMPose</p>
+            <p class="skill-note" data-for="python">The whole pipeline, from data prep to training to real-time inference, is written in <b>Python</b>.</p>
+            <p class="skill-note" data-for="pytorch">Fine-tuned and quantized the detection models in <b>PyTorch</b>, cutting inference latency 40%.</p>
+            <p class="skill-note" data-for="yolo"><b>YOLO11</b> powers real-time detection of hoops, players, balls, nets, and backboards at 30 FPS on CPU.</p>
+            <p class="skill-note" data-for="opencv"><b>OpenCV</b> handles the video stream and the court boundary and violation detection.</p>
+            <p class="skill-note" data-for="cv">Combines object detection and pose estimation to understand what's happening on court.</p>
+            <p class="skill-note" data-for="pose"><b>RTMPose</b> tracks body keypoints to analyze shooting form and give feedback.</p>
+            <p class="skill-note" data-for="roboflow"><b>Roboflow</b> was used for the 50,000+ image training dataset.</p>
+            <div class="chips"><span class="chip" title="Python"><img class="chip-icon" src="img/icons/python.svg" alt="" width="28" height="28">Python</span><span class="chip" title="PyTorch"><img class="chip-icon" src="img/icons/pytorch.svg" alt="" width="28" height="28">PyTorch</span><span class="chip" title="YOLO"><span class="chip-icon icon-text">Y</span>YOLO</span><span class="chip" title="OpenCV"><img class="chip-icon" src="img/icons/opencv.svg" alt="" width="28" height="28">OpenCV</span><span class="chip" title="Computer Vision"><span class="chip-icon icon-text">CV</span>Computer Vision</span><span class="chip" title="Pose Estimation"><span class="chip-icon icon-text">PE</span>Pose Estimation</span><span class="chip" title="Roboflow"><span class="chip-icon icon-text">R</span>Roboflow</span></div>
           </div>
         </article>
-
-        <article class="card" data-skills="python unity pytorch cv">
+        <article class="card" data-skills="python pytorch cv unity javascript html-css">
           <div class="card-cover">
             <svg viewBox="0 0 320 180" aria-hidden="true">
               <rect width="320" height="180" fill="#0e1533"/>
@@ -251,10 +314,7 @@
               <line x1="160" y1="40" x2="160" y2="130" stroke="#6fd3ff" stroke-dasharray="3 4"/>
             </svg>
           </div>
-          <div class="card-meta">
-            <span>🏆 4th Place</span>
-            <span>Stanford Immerse the Bay</span>
-          </div>
+          <div class="card-meta"><span>🏆 4th Place</span><span>Stanford Immerse the Bay</span></div>
           <div class="card-body">
             <h3>MosaicXR</h3>
             <p>Turns regular 2D photos into 3D you can view in VR on the Meta Quest 3.</p>
@@ -263,14 +323,52 @@
               <li>Web app for 2D → 3D conversion</li>
               <li>Interactive Unity gallery for viewing the results in VR</li>
             </ul>
-            <p class="stack">Python · PyTorch · Unity · Meta Quest 3</p>
+            <p class="skill-note" data-for="python">The image processing backend is written in <b>Python</b>.</p>
+            <p class="skill-note" data-for="pytorch">Ran the <b>MiDaS</b> depth estimation model in <b>PyTorch</b> to get a depth map from a single photo.</p>
+            <p class="skill-note" data-for="cv">Used monocular depth estimation plus geometric shifting to synthesize a left/right stereo pair.</p>
+            <p class="skill-note" data-for="unity">Built the VR gallery in <b>Unity</b> for Meta Quest 3.</p>
+            <p class="skill-note" data-for="javascript">The upload and convert web app uses <b>JavaScript</b>.</p>
+            <p class="skill-note" data-for="html-css">Web app frontend built with <b>HTML/CSS</b>.</p>
+            <div class="chips"><span class="chip" title="Python"><img class="chip-icon" src="img/icons/python.svg" alt="" width="28" height="28">Python</span><span class="chip" title="PyTorch"><img class="chip-icon" src="img/icons/pytorch.svg" alt="" width="28" height="28">PyTorch</span><span class="chip" title="Computer Vision"><span class="chip-icon icon-text">CV</span>Computer Vision</span><span class="chip" title="Unity"><img class="chip-icon" src="img/icons/unity.svg" alt="" width="28" height="28">Unity</span><span class="chip" title="JavaScript"><img class="chip-icon" src="img/icons/javascript.svg" alt="" width="28" height="28">JavaScript</span><span class="chip" title="HTML / CSS"><img class="chip-icon" src="img/icons/html5.svg" alt="" width="28" height="28">HTML / CSS</span></div>
             <div class="project-links">
               <a href="https://mosaicxr.github.io" target="_blank" rel="noopener">Web App</a>
               <a href="https://github.com/MosaicXR/MosaicXRUnity" target="_blank" rel="noopener">GitHub</a>
             </div>
           </div>
         </article>
-
+        <article class="card" data-skills="html-css javascript git">
+          <div class="card-cover">
+            <svg viewBox="0 0 320 180" aria-hidden="true">
+              <rect width="320" height="180" fill="#0e1533"/>
+              <rect x="40" y="28" width="240" height="124" rx="8" fill="#131d44" stroke="#6fd3ff" stroke-opacity="0.5"/>
+              <line x1="40" y1="46" x2="280" y2="46" stroke="#6fd3ff" stroke-opacity="0.3"/>
+              <circle cx="52" cy="37" r="3" fill="#ff6b6b"/><circle cx="62" cy="37" r="3" fill="#ffb85c"/><circle cx="72" cy="37" r="3" fill="#7ef0c8"/>
+              <ellipse cx="200" cy="120" rx="34" ry="6" fill="#3fb8a0"/><path d="M166,120 L200,140 L234,120 Z" fill="#3a447a"/>
+              <ellipse cx="236" cy="86" rx="20" ry="4" fill="#3fb8a0"/><path d="M216,86 L236,98 L256,86 Z" fill="#3a447a"/>
+              <polygon points="236,64 241,76 231,76" fill="#ffb85c"/>
+              <text x="58" y="76" fill="#6fd3ff" font-size="13" font-family="monospace">&lt;section</text>
+              <text x="58" y="94" fill="#cfe6ff" font-size="13" font-family="monospace">  id="floor-1"&gt;</text>
+              <text x="58" y="112" fill="#6fd3ff" font-size="13" font-family="monospace">&lt;/section&gt;</text>
+            </svg>
+          </div>
+          <div class="card-meta"><span>⏱ 2026</span><span>Solo</span></div>
+          <div class="card-body">
+            <h3>This Website</h3>
+            <p>The site you're on. A floating sky world theme with a skill filter that shows how I've used each skill.</p>
+            <ul>
+              <li>Hand-written HTML, CSS, and JavaScript, no frameworks</li>
+              <li>Skill filter connects every skill to the projects that use it</li>
+              <li>Hosted on GitHub Pages</li>
+            </ul>
+            <p class="skill-note" data-for="html-css">Layout, glass panels, and the floating islands art are all <b>HTML/CSS</b> and inline SVG.</p>
+            <p class="skill-note" data-for="javascript">The skill filter is plain <b>JavaScript</b>.</p>
+            <p class="skill-note" data-for="git">Every change is a <b>Git</b> commit, deployed automatically through GitHub Pages.</p>
+            <div class="chips"><span class="chip" title="HTML / CSS"><img class="chip-icon" src="img/icons/html5.svg" alt="" width="28" height="28">HTML / CSS</span><span class="chip" title="JavaScript"><img class="chip-icon" src="img/icons/javascript.svg" alt="" width="28" height="28">JavaScript</span><span class="chip" title="Git"><img class="chip-icon" src="img/icons/git.svg" alt="" width="28" height="28">Git</span></div>
+            <div class="project-links">
+              <a href="https://github.com/OmoniyiSoneye/OmoniyiSoneye.github.io" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -280,7 +378,6 @@
       <h2>Game Development</h2>
       <p class="hint">Building on Roblox since 2014.</p>
       <div class="card-grid">
-
         <article class="card" data-skills="blender lua">
           <div class="card-cover">
             <svg viewBox="0 0 320 180" aria-hidden="true">
@@ -304,10 +401,7 @@
               <text x="240" y="168" fill="#6fd3ff" font-size="10" font-family="monospace">R15 / R6</text>
             </svg>
           </div>
-          <div class="card-meta">
-            <span>In Development</span>
-            <span>Roblox</span>
-          </div>
+          <div class="card-meta"><span>In Development</span><span>Roblox</span></div>
           <div class="card-body">
             <h3>Impact Football</h3>
             <p>A football game on Roblox that I'm co-developing.</p>
@@ -315,13 +409,14 @@
               <li>Handle the game's animation work in Blender</li>
               <li>Help with gameplay scripting in Lua</li>
             </ul>
-            <p class="stack">Blender · Lua · Roblox Studio</p>
+            <p class="skill-note" data-for="blender">Animate the game's R15 and R6 characters in <b>Blender</b>.</p>
+            <p class="skill-note" data-for="lua">Help with gameplay scripting in <b>Lua</b>.</p>
+            <div class="chips"><span class="chip" title="Blender"><img class="chip-icon" src="img/icons/blender.svg" alt="" width="28" height="28">Blender</span><span class="chip" title="Lua"><img class="chip-icon" src="img/icons/lua.svg" alt="" width="28" height="28">Lua</span></div>
             <div class="project-links">
               <a href="https://www.roblox.com/communities/649177945/Impact-Football#!/about" target="_blank" rel="noopener">Roblox Group</a>
             </div>
           </div>
         </article>
-
       </div>
     </section>
 
@@ -330,8 +425,7 @@
       <p class="floor-label">FLOOR 6</p>
       <h2>Research</h2>
       <div class="card-grid">
-
-        <article class="card" data-skills="python blender cv">
+        <article class="card" data-skills="python cv blender">
           <div class="card-cover">
             <svg viewBox="0 0 320 180" aria-hidden="true">
               <rect width="320" height="180" fill="#0e1533"/>
@@ -344,10 +438,7 @@
               <text x="30" y="160" fill="#6fd3ff" font-size="10" font-family="monospace">"follow the ball handler"</text>
             </svg>
           </div>
-          <div class="card-meta">
-            <span>✓ Accepted</span>
-            <span>CVPR 2026 · 3D-LLM/VLA Workshop</span>
-          </div>
+          <div class="card-meta"><span>✓ Accepted</span><span>CVPR 2026 · 3D-LLM/VLA Workshop</span></div>
           <div class="card-body">
             <h3>Dynamic Anchors</h3>
             <p>A closed-loop controller that moves a camera based on plain-language instructions in fast-moving basketball scenes.</p>
@@ -356,10 +447,13 @@
               <li>Instruction satisfaction up from 0.302 (static baseline) to 1.049 in 2D and 0.962 in 3D</li>
               <li>Benchmarked 124 command families in Blender-generated scenes with 7D camera actions</li>
             </ul>
+            <p class="skill-note" data-for="python">Controller and evaluation written in <b>Python</b>.</p>
+            <p class="skill-note" data-for="cv">Combines language grounding, 3D perception, and vision-language-action for camera control.</p>
+            <p class="skill-note" data-for="blender">Test environments were generated in <b>Blender</b>.</p>
+            <div class="chips"><span class="chip" title="Python"><img class="chip-icon" src="img/icons/python.svg" alt="" width="28" height="28">Python</span><span class="chip" title="Computer Vision"><span class="chip-icon icon-text">CV</span>Computer Vision</span><span class="chip" title="Blender"><img class="chip-icon" src="img/icons/blender.svg" alt="" width="28" height="28">Blender</span></div>
           </div>
         </article>
-
-        <article class="card">
+        <article class="card" data-skills="">
           <div class="card-cover">
             <svg viewBox="0 0 320 180" aria-hidden="true">
               <rect width="320" height="180" fill="#0e1533"/>
@@ -377,10 +471,7 @@
               <text x="193" y="58" text-anchor="middle" fill="#0e1533" font-size="10" font-weight="700" font-family="sans-serif">AI</text>
             </svg>
           </div>
-          <div class="card-meta">
-            <span>Position Paper</span>
-            <span>May 2026</span>
-          </div>
+          <div class="card-meta"><span>Position Paper</span><span>May 2026</span></div>
           <div class="card-body">
             <h3>AI Watermarking Should Be Disclosed, Not Hidden</h3>
             <p>Argues that AI companies should openly disclose how they watermark AI-generated content.</p>
@@ -388,17 +479,68 @@
               <li>Analyzed the ethical and technical tradeoffs of hidden vs disclosed watermarking</li>
               <li>Compared disclosure practices across 10+ major AI companies</li>
             </ul>
+
           </div>
         </article>
+      </div>
+    </section>
 
+    <!-- ===== FLOOR 7: COMMUNITY ===== -->
+    <section id="floor-7" class="floor">
+      <p class="floor-label">FLOOR 7</p>
+      <h2>Community</h2>
+
+      <article class="panel">
+        <p class="tags"><span>Elected Office</span><span>May 2026 – Present</span></p>
+        <h3>National Society of Black Engineers · Region VI Treasurer</h3>
+        <p>I sit on NSBE's Region VI Executive Board and run the region's finances, supporting chapters and conferences across the western US.</p>
+        <ul>
+          <li>Manage $100K+ in regional funds and the regional budget</li>
+          <li>Helped generate $77K in corporate sponsorship and $80K+ in conference registration revenue</li>
+          <li>Run finances for zone summits across 6 zones</li>
+          <li>Coordinated Chapter Relief for 10 chapters: 15 hotel rooms and a $10K travel budget for FRC</li>
+        </ul>
+      </article>
+
+      <div class="mini-grid">
+        <article class="panel">
+          <p class="tags"><span>Hackathons</span></p>
+          <h3>Stanford Immerse the Bay</h3>
+          <p>4th place with MosaicXR.</p>
+        </article>
+        <article class="panel">
+          <p class="tags"><span>Mentoring</span></p>
+          <h3>UC Berkeley SMASH</h3>
+          <p>SMASH scholar, then came back as a TA for Intro to CS.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== FLOOR 8: HOBBIES ===== -->
+    <section id="floor-8" class="floor">
+      <p class="floor-label">FLOOR 8</p>
+      <h2>Hobbies</h2>
+      <div class="mini-grid">
+        <article class="panel">
+          <h3>Sports</h3>
+          <p>Basketball, soccer, and football. Basketball is a big part of why I built LeBuckets.</p>
+        </article>
+        <article class="panel">
+          <h3>Video Games</h3>
+          <p>Kingdom Hearts, Persona, Roblox, Minecraft, and Brawlhalla. Roblox is also where I started building games back in 2014.</p>
+        </article>
+        <article class="panel">
+          <h3>Family &amp; Community</h3>
+          <p>I'm Nigerian and proud of it. Family, community, and time out with friends keep me grounded.</p>
+        </article>
       </div>
     </section>
 
     <!-- ===== CONTACT (final floor) ===== -->
-    <section id="floor-7" class="floor">
+    <section id="contact" class="floor">
       <p class="floor-label">FINAL FLOOR</p>
       <h2>Contact</h2>
-      <p>Looking for Summer 2027 internships in software, ML/computer vision, and embedded systems. My inbox is open.</p>
+      <p class="contact-line">Looking for Summer 2027 internships in software, ML / computer vision, and embedded systems. My inbox is open.</p>
       <div class="links">
         <a href="mailto:soneyeniyi@gmail.com">soneyeniyi@gmail.com</a>
         <a href="https://linkedin.com/in/omoniyisoneye" target="_blank" rel="noopener">LinkedIn</a>
@@ -409,7 +551,7 @@
   </main>
 
   <footer>
-    <p>© 2026 Omoniyi Soneye</p>
+    <p>© 2026 Omoniyi Soneye · Skill icons from <a href="https://devicon.dev" target="_blank" rel="noopener">Devicon</a></p>
   </footer>
 
   <script src="index.js"></script>

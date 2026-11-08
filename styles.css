@@ -127,7 +127,7 @@ h3 { font-size: 1.35rem; font-weight: 700; margin-bottom: 0.35rem; }
 .hint { color: var(--text-dim); margin: -0.75rem 0 1.25rem; }
 
 /* ---- Hero ---- */
-#floor-0 {
+.hero {
   position: relative;
   min-height: calc(100vh - 3.5rem);
   display: grid;
@@ -237,23 +237,6 @@ h3 { font-size: 1.35rem; font-weight: 700; margin-bottom: 0.35rem; }
 .project-links { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1rem; }
 .project-links a { font-size: 0.9rem; padding: 0.3rem 0.9rem; }
 
-/* ---- Skills ---- */
-.skill-group { margin-bottom: 1.4rem; }
-.skill-group h3 { font-size: 1rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-faint); margin-bottom: 0.6rem; }
-.skills { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-.skills button {
-  font-family: var(--font-head);
-  font-weight: 600;
-  font-size: 0.95rem;
-  letter-spacing: 0.04em;
-  padding: 0.4rem 0.95rem;
-  color: var(--text);
-  background: var(--panel);
-  border: 1px solid var(--panel-border);
-  border-radius: 8px;
-  cursor: default;
-}
-
 footer {
   text-align: center;
   padding: 3rem 1rem;
@@ -263,7 +246,7 @@ footer {
 
 /* ---- Phones / small screens ---- */
 @media (max-width: 760px) {
-  #floor-0 { grid-template-columns: 1fr; min-height: auto; padding-top: 2rem; }
+  .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 2rem; }
   .hero-art { max-width: 280px; order: -1; }
   h2 { font-size: 2rem; }
   #floor-menu { flex-wrap: nowrap; flex-direction: column; align-items: flex-start; gap: 0.4rem; }
@@ -348,4 +331,121 @@ footer {
 
 @media (prefers-reduced-motion: reduce) {
   .card, .card:hover { transition: none; transform: none; }
+}
+
+/* ---- About ---- */
+.about { display: grid; grid-template-columns: 1.4fr 1fr; gap: 1.25rem; align-items: start; }
+.about .panel { margin: 0; }
+.about-text p { margin-bottom: 0.9rem; }
+.about-text p:last-child { margin-bottom: 0; }
+.lead { font-size: 1.2rem; color: var(--text) !important; font-weight: 500; }
+.facts-label {
+  margin-top: 0.9rem;
+  font-family: var(--font-head); font-weight: 600; font-size: 0.8rem;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent) !important;
+}
+
+/* ---- Skill tiles ---- */
+.group-title {
+  font-size: 0.95rem; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--text-faint); margin: 1.5rem 0 0.75rem;
+}
+.skill-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); gap: 0.75rem; }
+.skill-tile {
+  display: flex; align-items: flex-start; gap: 0.8rem;
+  text-align: left; font: inherit; color: var(--text);
+  padding: 0.85rem 1rem;
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: 12px;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+button.skill-tile { cursor: pointer; }
+button.skill-tile:hover, button.skill-tile:focus-visible {
+  border-color: var(--accent);
+  box-shadow: 0 0 20px rgba(111, 211, 255, 0.2);
+  transform: translateY(-2px);
+  outline: none;
+}
+.skill-tile.no-link { opacity: 0.8; }
+.icon {
+  flex: none; width: 40px; height: 40px; padding: 6px;
+  background: #e9f0ff; border-radius: 10px;
+}
+.icon-text {
+  display: grid; place-items: center;
+  font-family: var(--font-head); font-weight: 700; font-size: 0.95rem;
+  color: #0e1533; background: linear-gradient(135deg, var(--accent), #b9e9ff);
+}
+.tile-text { display: flex; flex-direction: column; }
+.tile-name { font-family: var(--font-head); font-weight: 700; font-size: 1.05rem; }
+.tile-line { font-size: 0.85rem; color: var(--text-dim); line-height: 1.4; }
+.tile-go {
+  margin-top: 0.3rem; font-family: var(--font-head); font-weight: 600;
+  font-size: 0.8rem; letter-spacing: 0.05em; color: var(--accent);
+}
+
+/* ---- Filter bar ---- */
+.filter-bar { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-bottom: 0.75rem; }
+.filter-btn {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-family: var(--font-head); font-weight: 600; font-size: 0.9rem; letter-spacing: 0.03em;
+  padding: 0.3rem 0.8rem 0.3rem 0.4rem;
+  color: var(--text-dim);
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.filter-btn[data-skill="all"] { padding-left: 0.8rem; }
+.filter-btn:hover { color: var(--text); border-color: var(--accent); }
+.filter-btn.active {
+  color: #0e1533; background: var(--accent); border-color: var(--accent);
+  box-shadow: 0 0 16px rgba(111, 211, 255, 0.4);
+}
+.chip-icon {
+  width: 22px; height: 22px; padding: 3px;
+  background: #e9f0ff; border-radius: 6px; flex: none;
+}
+.chip-icon.icon-text { font-size: 0.65rem; }
+.filter-status { min-height: 1.4em; color: var(--accent-warm); font-size: 0.9rem; margin-bottom: 1rem; }
+
+/* ---- Skill chips + notes on cards ---- */
+.chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: auto; padding-top: 1rem; }
+.chip {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  font-family: var(--font-head); font-weight: 600; font-size: 0.8rem;
+  padding: 0.15rem 0.6rem 0.15rem 0.2rem;
+  color: var(--text-dim);
+  border: 1px solid var(--panel-border);
+  border-radius: 999px;
+}
+.chip .chip-icon { width: 18px; height: 18px; padding: 2px; }
+.chip.lit { color: var(--text); border-color: var(--accent); box-shadow: 0 0 10px rgba(111, 211, 255, 0.35); }
+.skill-note {
+  display: none;
+  margin: 0.8rem 0 0;
+  padding: 0.7rem 0.9rem;
+  font-size: 0.92rem;
+  color: var(--text) !important;
+  background: rgba(111, 211, 255, 0.08);
+  border-left: 3px solid var(--accent);
+  border-radius: 6px;
+}
+.skill-note.visible { display: block; }
+.skill-note b { color: var(--accent); }
+.card[hidden] { display: none; }
+.floor.filtered-out { display: none; }
+
+/* ---- Small panel grids (Community, Hobbies) ---- */
+.mini-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); gap: 1.25rem; }
+.mini-grid .panel { margin: 0; }
+.contact-line { color: var(--text-dim); margin-bottom: 1rem; max-width: 60ch; }
+
+@media (max-width: 760px) {
+  .about { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .skill-tile, button.skill-tile:hover { transition: none; transform: none; }
 }
